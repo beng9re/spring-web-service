@@ -1,0 +1,47 @@
+buildscript {
+//    전역변수 설정
+    ext{
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    //가져올 저장소 설정
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath ("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+//    id 'org.springframework.boot' version "${springBootVersion}"
+    id 'java'
+}
+
+apply plugin:'java'
+apply plugin:'eclipse'
+apply plugin:'org.springframework.boot'
+apply plugin:'io.spring.dependency-management'
+
+
+
+group 'com.springWebTest'
+version '1.0-SNAPSHOT'
+
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    //프로젝트 의존성 설치
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+
+
+
