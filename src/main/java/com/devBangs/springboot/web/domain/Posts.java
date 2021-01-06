@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor //고본생성자 자동추가
 @Entity //테이블링크 클래스 기본값 카멜케이스 => 언더스코어 으로 자동 맵핑
-public class Posts {
+public class Posts extends BaseTimeEntity{
 
     @Id //PK
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Auto Increment

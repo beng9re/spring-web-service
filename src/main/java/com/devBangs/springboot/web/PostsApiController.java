@@ -1,6 +1,7 @@
 package com.devBangs.springboot.web;
 
 import com.devBangs.springboot.service.posts.PostsService;
+import com.devBangs.springboot.web.Dto.PostsResponseDto;
 import com.devBangs.springboot.web.Dto.PostsSaveRequestDto;
 import com.devBangs.springboot.web.Dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,11 @@ import org.springframework.web.bind.annotation.*;
 public class PostsApiController {
 
     private final PostsService postsService;
+
+    @GetMapping("api/v1/posts/{id}")
+    public PostsResponseDto findById(@PathVariable Long id){
+        return postsService.findById(id);
+    }
 
     @PostMapping("/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto){

@@ -23,9 +23,8 @@ public class PostsService {
     public Long update(Long id, PostsUpdateRequestDto requestDto){
         Posts posts = postsRepository.findById(id)
                 .orElseThrow(()-> new IllegalArgumentException("해당게시글 없다. id=" + id));
-        //JPA 영속성 컨텍스트라 업데이트 하지않음
+        //JPA 영속성 컨텍스트라 업데이트를 안해도 업데이트 되어 있음
         posts.update(requestDto.getTitle(),requestDto.getContent());
-
 
         return id;
     }
