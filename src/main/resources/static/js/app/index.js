@@ -22,13 +22,12 @@ var main = {
 
             if(!postResponse.ok){
                 throw new Error("서버에러");
-                return;
             }
             const jsonData = await postResponse.json();
             console.info(jsonData);
             alert('글이 등록되었습니다.');
             window.location.href = '/';
-            return;
+            return jsonData;
          }
          postData().catch(err=>{alert(err)});
 
