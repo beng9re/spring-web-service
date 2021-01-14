@@ -6,6 +6,7 @@ class Posts{
     eventMapper(){
         const _this = this;
         $('#btn-save').on('click',function() {
+        
             _this.save();
         });
     }
@@ -37,5 +38,7 @@ class Posts{
         postData().catch(err=>{alert(err)});
     }
 }
-const post = new Posts();
+
+export default new Posts();
+
 

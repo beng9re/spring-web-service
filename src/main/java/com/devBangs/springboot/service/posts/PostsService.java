@@ -7,8 +7,11 @@ import com.devBangs.springboot.web.domain.Posts;
 import com.devBangs.springboot.web.domain.PostsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -34,5 +37,13 @@ public class PostsService {
                 .orElseThrow(()->new IllegalArgumentException("해당 게시물이 없습니다 id="+id));
         return new PostsResponseDto(entity);
     }
+
+    @Transactional(readOnly=true)
+    public List<PostsResponseDto> findAlldesc(){
+        return postsRepository.findAllDesc().stream()
+                .map(PostsResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
 
 }

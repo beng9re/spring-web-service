@@ -1,14 +1,22 @@
 package com.devBangs.springboot.web;
 
+import com.devBangs.springboot.service.posts.PostsService;
+import com.devBangs.springboot.web.domain.Posts;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.AbstractAuditable_;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+@RequiredArgsConstructor
 @Controller
 public class IndexController {
 
+    private final PostsService postsService;
+
     @GetMapping("/")
-    public String index(){
+    public String index(Model model){
+        model.addAttribute("posts",postsService.findAlldesc());
         return "index";
     }
 
