@@ -1,11 +1,16 @@
-var main = {
-    init : function(){
-        var _this = this;
-        $('#btn-save').on('click',function(){
+class Posts{
+    constructor() {
+        this.eventMapper();
+    }
+
+    eventMapper(){
+        const _this = this;
+        $('#btn-save').on('click',function() {
             _this.save();
         });
-    },
-    save : async function () {
+    }
+
+    save(){
         const data = {
             title : $('#title').val(),
             author : $('#author').val(),
@@ -28,10 +33,9 @@ var main = {
             alert('글이 등록되었습니다.');
             window.location.href = '/';
             return jsonData;
-         }
-         postData().catch(err=>{alert(err)});
-
+            }
+        postData().catch(err=>{alert(err)});
     }
-};
+}
+const post = new Posts();
 
-main.init();
