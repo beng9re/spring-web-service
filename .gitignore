@@ -4,3 +4,4 @@
 .history
 *.class
 *.iml
+application-oauth.yml
