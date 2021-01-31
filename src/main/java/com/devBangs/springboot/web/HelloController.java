@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class HelloController {
 
-    @GetMapping("/")
+    @GetMapping()
     public String hello(){
         HelloResponseDto dto = new HelloResponseDto("String",100);
         return "hello";

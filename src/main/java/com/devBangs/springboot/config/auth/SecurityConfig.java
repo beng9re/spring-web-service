@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.client.userinfo.CustomUserTypesOAuth2
 
 @RequiredArgsConstructor
 @EnableWebSecurity //스프링시큐리티 설정 활성화
-public class SequrityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final CustomOauth2UserService customOauth2UserService;
 
