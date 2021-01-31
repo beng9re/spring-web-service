@@ -44,6 +44,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-oauth2-client') // 스프링 OAtuh
     compile('org.springframework.session:spring-session-jdbc:') // 스프링 세션 jdbc s
     compile('com.h2database:h2') // 인메모리 H2 데이터 베이스
+    compile('org.mariadb.jdbc:mariadb-java-client')
     compile('org.projectlombok:lombok')
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.projectlombok:lombok'

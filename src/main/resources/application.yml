@@ -3,13 +3,25 @@ spring:
     console:
       enabled: true
   jpa:
-    show_sql: true #쿼리로그 허용
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect #쿼리 로그 Mysql로 변경
   profiles:
     include: oauth
-
+    active: dev
   session:
     store-type: jdbc
+---
+spring:
+  profiles: dev
+  jpa:
+    show-sql: true
+---
+spring:profiles: real
+spring.profiles.include: read-db
+spring:
+  jpa:
+    show-sql: false
+
+
 
