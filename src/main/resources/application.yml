@@ -1,27 +1,27 @@
 spring:
-  h2:
-    console:
-      enabled: true
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect #쿼리 로그 Mysql로 변경
   profiles:
     include: oauth
-    active: dev
+    active: real
   session:
     store-type: jdbc
 ---
 spring:
   profiles: dev
+  h2:
+    console:
+      enabled: true
   jpa:
     show-sql: true
 ---
 spring:profiles: real
-spring.profiles.include: read-db
-spring:
-  jpa:
-    show-sql: false
+spring.profiles.include: real-db
+
+
+
 
 
 

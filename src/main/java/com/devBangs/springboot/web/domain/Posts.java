@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
+import org.mariadb.jdbc.Driver;
 @Getter
 @NoArgsConstructor //고본생성자 자동추가
 @Entity //테이블링크 클래스 기본값 카멜케이스 => 언더스코어 으로 자동 맵핑
