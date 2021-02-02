@@ -1,13 +1,14 @@
-langage: java
+language: java
 jdk :
   - openjdk8
 
+#마스터 브렌치의 변경시 부쉬
 branch: master
 
 # Travis CI 서버의 홈
 # 그레이들 의존 케쉬
 cache:
-  diretories:
+  directories:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
