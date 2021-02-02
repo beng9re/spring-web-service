@@ -5,7 +5,7 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect #쿼리 로그 Mysql로 변경
   profiles:
     include: oauth
-    active: real
+    active: dev
   session:
     store-type: jdbc
 ---
