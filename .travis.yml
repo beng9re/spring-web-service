@@ -25,7 +25,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: spring2-web-service-build
-    region: ap-northest-2
+    region: ap-northeast-2
     skip_cleanup: true
     acl: private
     local_dir: deploy #디렉토리지정 S3 전달
