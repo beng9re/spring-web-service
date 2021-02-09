@@ -16,7 +16,7 @@ script: "./gradlew clean build"
 
 #디플로이 명령전에수
 before_deploy:
-  - zip -r spring-web-service
+  - zip -r spring-web-service *
   - mkdir -p deploy
   - mv spring-web-service.zin deploy/spring-web-service.zip
 
